@@ -84,15 +84,22 @@
 
 
 
-<meta name="description" content="跟着感觉走向未来....">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Soso">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="#Code Reading Uiautomator
+####U(x)函数根据不同的python版本决定是不是需要把字符串进行转码，如果是2.x版本的话，那么就需要利用进行判断1sys.version_info.major
+####param_to_property(props, *kwprops)函数这个函数比较精彩，作为装饰器教学,返回的Wrapper的class对象和之前看到的一般装饰器返回的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Uiautomator-reading">
+<meta property="og:url" content="http://yoursite.com/2017/01/10/uiautomator/index.html">
 <meta property="og:site_name" content="Soso">
-<meta property="og:description" content="跟着感觉走向未来....">
+<meta property="og:description" content="#Code Reading Uiautomator
+####U(x)函数根据不同的python版本决定是不是需要把字符串进行转码，如果是2.x版本的话，那么就需要利用进行判断1sys.version_info.major
+####param_to_property(props, *kwprops)函数这个函数比较精彩，作为装饰器教学,返回的Wrapper的class对象和之前看到的一般装饰器返回的">
+<meta property="og:updated_time" content="2017-01-10T13:55:28.396Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Soso">
-<meta name="twitter:description" content="跟着感觉走向未来....">
+<meta name="twitter:title" content="Uiautomator-reading">
+<meta name="twitter:description" content="#Code Reading Uiautomator
+####U(x)函数根据不同的python版本决定是不是需要把字符串进行转码，如果是2.x版本的话，那么就需要利用进行判断1sys.version_info.major
+####param_to_property(props, *kwprops)函数这个函数比较精彩，作为装饰器教学,返回的Wrapper的class对象和之前看到的一般装饰器返回的">
 
 
 
@@ -113,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/10/uiautomator/"/>
 
-  <title> Soso </title>
+  <title> Uiautomator-reading | Soso </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -136,9 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -235,9 +240,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -257,10 +262,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/01/10/uiautomator/" itemprop="url">
-                  Uiautomator-reading
-                </a>
+                Uiautomator-reading
               
             
           </h1>
@@ -319,9 +321,7 @@
       
 
       
-        
-          
-            <p>#Code Reading <a href="https://github.com/xiaocong/uiautomator/" target="_blank" rel="external">Uiautomator</a></p>
+        <p>#Code Reading <a href="https://github.com/xiaocong/uiautomator/" target="_blank" rel="external">Uiautomator</a></p>
 <p>####U(x)函数<br>根据不同的python版本决定是不是需要把字符串进行转码，如果是2.x版本的话，那么就需要利用进行判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sys.version_info.major</div></pre></td></tr></table></figure></p>
 <p>####param_to_property(<em>props, *</em>kwprops)函数<br>这个函数比较精彩，作为装饰器教学,返回的Wrapper的class对象和之前看到的一般装饰器返回的函数对象不同<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">def param_to_property(*props, **kwprops):</div><div class="line">    if props and kwprops:</div><div class="line">        raise SyntaxError(&quot;Can not set both props and kwprops at the same time.&quot;)</div><div class="line"></div><div class="line">    class Wrapper(object):</div><div class="line"></div><div class="line">        def __init__(self, func):</div><div class="line">            self.func = func</div><div class="line">            self.kwargs, self.args = &#123;&#125;, []</div><div class="line"></div><div class="line">        def __getattr__(self, attr):</div><div class="line">            if kwprops:</div><div class="line">                for prop_name, prop_values in kwprops.items():</div><div class="line">                    if attr in prop_values and prop_name not in self.kwargs:</div><div class="line">                        self.kwargs[prop_name] = attr</div><div class="line">                        return self</div><div class="line">            elif attr in props:</div><div class="line">                self.args.append(attr)</div><div class="line">                return self</div><div class="line">            raise AttributeError(&quot;%s parameter is duplicated or not allowed!&quot; % attr)</div><div class="line"></div><div class="line">        def __call__(self, *args, **kwargs):</div><div class="line">            if kwprops:</div><div class="line">                kwargs.update(self.kwargs)</div><div class="line">                self.kwargs = &#123;&#125;</div><div class="line">                return self.func(*args, **kwargs)</div><div class="line">            else:</div><div class="line">                new_args, self.args = self.args + list(args), []</div><div class="line">                return self.func(*new_args, **kwargs)</div><div class="line">    return Wrapper</div></pre></td></tr></table></figure></p>
 <p>使用方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@property</div><div class="line">def swipe(self):</div><div class="line">    @param_to_property(direction=[&quot;up&quot;, &quot;down&quot;, &quot;right&quot;, &quot;left&quot;])</div><div class="line">    def _swipe(direction=&quot;left&quot;, steps=10, percent=1):</div><div class="line">        if percent == 1:</div><div class="line">            return self.jsonrpc.swipe(self.selector, direction, steps)</div><div class="line">        else:</div><div class="line">            return self.jsonrpc.swipe(self.selector, direction, percent, steps)</div><div class="line">    return _swipe</div></pre></td></tr></table></figure></p>
@@ -350,16 +350,20 @@
 <p>####AutomatorDevice Class<br>这个主要是对Android Device来进行封装，里面包含了前面的Automator Server对象，方便在Device里面直接和Server进行交互。</p>
 <p>####AutomatorDeviceUiObject Class &amp;&amp; AutomatorDeviceObject Class<br>主要是封装了一些元素，来支持对某一个元素的各种操作，如点击等</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -367,132 +371,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/04/Merry Christmas/" rel="next" title="Merry Christmas">
+                <i class="fa fa-chevron-left"></i> Merry Christmas
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/09/04/Merry Christmas/" itemprop="url">
-                  Merry Christmas
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-04T16:45:25+08:00" content="2016-09-04">
-              2016-09-04
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Music/" itemprop="url" rel="index">
-                    <span itemprop="name">Music</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>大概是去年圣诞节听到了逃跑的:<br><a href="http://weibo.com/p/10151501_100101394" target="_blank" rel="external">Merry Christmas</a>!<br><img src="http://i1.piimg.com/567571/6f81a4823928b0c4.jpg" alt="ExcapePlan"><br>哈哈，欢迎大家多来看看我写的东西，毕竟语文不好，时间总是花完了，能留点力气来写点什么也是不容易。这首歌作为一切的结束和开始吧，一起走向未来…</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -500,6 +404,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -519,8 +427,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/escapeplan.jpg"
@@ -574,6 +491,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Adb-Class"><span class="nav-number">1.</span> <span class="nav-text">Adb Class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Not-FoundHandler-Class"><span class="nav-number">2.</span> <span class="nav-text">Not FoundHandler Class</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -677,6 +605,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
