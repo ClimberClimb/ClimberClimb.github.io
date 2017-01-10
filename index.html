@@ -272,7 +272,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2017-01-10T22:02:39+08:00" content="2017-01-10">
+            <time itemprop="dateCreated" datetime="2017-01-10T22:05:55+08:00" content="2017-01-10">
               2017-01-10
             </time>
           </span>
@@ -334,7 +334,10 @@
 <ul>
 <li>clone函数来复制一个和自己一样的Selector</li>
 <li>selector child来增加一个child的数量</li>
-<li>sibling来增加一个sibling的数量<h4 id="Adb-Class"><a href="#Adb-Class" class="headerlink" title="Adb Class"></a>Adb Class</h4>封装了adb的一系列的操作：</li>
+<li>sibling来增加一个sibling的数量</li>
+</ul>
+<h4 id="Adb-Class"><a href="#Adb-Class" class="headerlink" title="Adb Class"></a>Adb Class</h4><p>封装了adb的一系列的操作：</p>
+<ul>
 <li>adb 函数主要是返回了操作系统下的adb程序的路径,主要利用了os模块下的os.path.join 和 os.path.exists等，其中</li>
 <li>cmd和raw_cmd主要是下发打开adb进程，来进行一些命令操作<br>-下面的主要是对于devices，forward，和一些操作的封装，比较有意思的就是列表向dict的转换<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&gt;&gt;&gt; dict([&apos;a2&apos;, &apos;b3&apos;,&apos;c4&apos;,&apos;d5&apos;])</div><div class="line">&#123;&apos;a&apos;: &apos;2&apos;, &apos;b&apos;: &apos;3&apos;, &apos;c&apos;: &apos;4&apos;, &apos;d&apos;: &apos;5&apos;&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -342,8 +345,8 @@
 <h4 id="Not-FoundHandler-Class"><a href="#Not-FoundHandler-Class" class="headerlink" title="Not FoundHandler Class"></a>Not FoundHandler Class</h4><p>这个主要是个descriptor，暂时还不是很清楚具体作用，先占着坑</p>
 <blockquote>
 <p>Descriptors are objects with any of <strong>get</strong>, <strong>set</strong>, or <strong>delete</strong>. These descriptor objects can be used as attributes on other object class definitions.</p>
-<h4 id="AutomatorServer-Class"><a href="#AutomatorServer-Class" class="headerlink" title="AutomatorServer Class"></a>AutomatorServer Class</h4><p>包含前面的Adb Class的对象，封装了，push 文件，install apk, sdk version等操作。<br>比较关键的是这三个函数，对调用上面的RPCMethod，进行了一些封装操作，,调用jsonrpc_wrap返回的是JsonRPCClient的对象,而调用__jsonrpc的则少了添加了method，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def jsonrpc(self):</div><div class="line">def jsonrpc_wrap(self, timeout):</div><div class="line">def __jsonrpc(self)</div></pre></td></tr></table></figure></p>
 </blockquote>
+<h4 id="AutomatorServer-Class"><a href="#AutomatorServer-Class" class="headerlink" title="AutomatorServer Class"></a>AutomatorServer Class</h4><p>包含前面的Adb Class的对象，封装了，push 文件，install apk, sdk version等操作。<br>比较关键的是这三个函数，对调用上面的RPCMethod，进行了一些封装操作，,调用jsonrpc_wrap返回的是JsonRPCClient的对象,而调用__jsonrpc的则少了添加了method，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def jsonrpc(self):</div><div class="line">def jsonrpc_wrap(self, timeout):</div><div class="line">def __jsonrpc(self)</div></pre></td></tr></table></figure></p>
 <p>当然server肯定有自己的start和stop方法，start方法里面主要涉及到的有是安装apk作为server，还是利用uiautomator里面的runtest来进行操作，取决于安卓的版本是多少,不过这里有个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ERROR_CODE_BASE = -32000</div></pre></td></tr></table></figure></p>
 <p>是什么意思,后面的错误处理的时候也用到了这个。</p>
 <h4 id="AutomatorDevice-Class"><a href="#AutomatorDevice-Class" class="headerlink" title="AutomatorDevice Class"></a>AutomatorDevice Class</h4><p>这个主要是对Android Device来进行封装，里面包含了前面的Automator Server对象，方便在Device里面直接和Server进行交互。</p>
